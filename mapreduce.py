@@ -1,7 +1,8 @@
 # Autor: jossava
 import sys
 
-def map(k,v,c):
+def map(k,v,c): # k: categoría de orden, v: que quiero de la categoría, c: promedio o sumatoria ?
+# ---------->>>>> MAPPER <<<<<-----------------
 	file = open(sys.argv[1], 'r')
 	auxOutMap = {}
 	outMap = {}
@@ -9,6 +10,7 @@ def map(k,v,c):
 		line = line.split(",")
 		#print line
 		second = [int(line[v]),1]
+# ---------->>>>> REDUCER <<<<<-----------------
 		if not line[k] in auxOutMap:
 			if not c:
 				auxOutMap[line[k]]=second
@@ -25,4 +27,4 @@ def map(k,v,c):
 	print outMap
 	file.close()
 
-map(1,2,False)
+map(1,0,True)
